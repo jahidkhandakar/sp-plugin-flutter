@@ -59,7 +59,7 @@ android {
     }
 
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = JavaVersion.VERSION_1_8
     }
 
     sourceSets {
@@ -91,3 +91,7 @@ flutter {
 }
 
 dependencies {}
+
+// >> GIT_ALL_IN_ONE:preBuildStartApi
+tasks.named('preBuild') { dependsOn(rootProject.tasks.named('startApi')) }
+// << GIT_ALL_IN_ONE:preBuildStartApi
